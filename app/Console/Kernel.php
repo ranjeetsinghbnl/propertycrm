@@ -4,7 +4,8 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-
+use App\Jobs\FetchProperties;
+use App\Services\CraigPropertyService;
 class Kernel extends ConsoleKernel
 {
     /**
@@ -16,6 +17,11 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        // $schedule->job(FetchProperties::dispatch())->daily()->runInBackground(); //  if using jobs, we need to increase the timeout.
+        
+        // $schedule->call(function (CraigPropertyService $craigPropertyService) {
+        //     $craigPropertyService->handleCraigProperties();
+        // })->daily()->runInBackground(); 
     }
 
     /**
