@@ -39,6 +39,17 @@ class PropertyType extends Model
     ];
 
     /**
+     * Scope a query to sort by title
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeOrderByTitle($query)
+    {
+        $query->orderBy('title');
+    }
+
+    /**
      * Scope a query to only include property types for a given source.
      *
      * @param  \Illuminate\Database\Eloquent\Builder  $query

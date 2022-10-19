@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('properties', function (Blueprint $table) {
             $table->id();
-            $table->uuid('ex_property_id')->comment('Property uuid from third party API, used for mapping with our DB');
+            $table->uuid('ex_property_id')->nullable()->comment('Property uuid from third party API, used for mapping with our DB');
             $table->string('county', 255);
             $table->string('country', 255);
             $table->string('town', 255);

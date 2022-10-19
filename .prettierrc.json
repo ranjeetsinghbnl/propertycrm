@@ -1,1 +1,8 @@
-{}
+{
+    "printWidth": 10000,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "all",
+    "htmlWhitespaceSensitivity": "css"
+}
