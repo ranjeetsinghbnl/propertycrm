@@ -5,7 +5,7 @@ import eslintPlugin from "vite-plugin-eslint";
 
 export default defineConfig({
     plugins: [
-        //eslintPlugin(),
+        // eslintPlugin(),
         laravel({
             input: 'resources/js/app.js',
             refresh: true,

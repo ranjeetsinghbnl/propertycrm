@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import ApplicationLogo from '@/Components/ApplicationLogo.vue'
-import Dropdown from '@/Components/Dropdown.vue'
+import MenuDropdown from '@/Components/MenuDropdown.vue'
 import DropdownLink from '@/Components/DropdownLink.vue'
 import NavLink from '@/Components/NavLink.vue'
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue'
@@ -39,9 +39,9 @@ const showingNavigationDropdown = ref(false)
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-              <!-- Settings Dropdown -->
+              <!-- Settings MenuDropdown -->
               <div class="ml-3 relative">
-                <Dropdown align="right" width="48">
+                <MenuDropdown align="right" width="48">
                   <template #trigger>
                     <span class="inline-flex rounded-md">
                       <button
@@ -75,7 +75,7 @@ const showingNavigationDropdown = ref(false)
                       Log Out
                     </DropdownLink>
                   </template>
-                </Dropdown>
+                </MenuDropdown>
               </div>
             </div>
 

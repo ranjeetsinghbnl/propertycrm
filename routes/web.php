@@ -2,9 +2,10 @@
 
 // use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+// use Inertia\Inertia;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\PropertiesController;
+use App\Http\Controllers\ImagesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,25 +43,20 @@ Route::get('/', function () {
     return redirect()->route('properties.index');
 });
 
-
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('properties', [PropertiesController::class, 'index'])->name('properties.index');
     Route::get('properties/create', [PropertiesController::class, 'create'])->name('properties.create');
     Route::post('properties', [PropertiesController::class, 'store'])->name('properties.store');
     Route::get('properties/{property}/edit', [PropertiesController::class, 'edit'])->name('properties.edit');
-    Route::put('properties/{property}', [PropertiesController::class, 'update'])->name('properties.update');
+    Route::post('properties/{property}', [PropertiesController::class, 'update'])->name('properties.update'); // Problem with multipart data in PUT request, so using POST call
     Route::delete('properties/{property}', [PropertiesController::class, 'destroy'])->name('properties.destroy');
 });
 
-// Route::controller(PropertiesController::class)->group(['name' => 'properties', 'middleware' => ['auth']], function () {
-//     Route::get('properties', 'index')->name('index');
-//     Route::get('properties/create', 'create')->name('create');
-//     Route::post('properties', 'store')->name('store');
-//     Route::get('properties/{property}/edit', 'edit')->name('edit');
-//     Route::put('properties/{property}', 'update')->name('update');
-//     Route::delete('properties/{property}', 'destroy')->name('destroy');
-// });
+// Images
 
+Route::get('/img/{path}', [ImagesController::class, 'show'])
+->where('path', '.*')
+->name('image');
 
 // Route::get('/dashboard', function () {
 //     return Inertia::render('Dashboard');

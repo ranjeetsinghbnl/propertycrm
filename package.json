@@ -4,8 +4,7 @@
         "build": "vite build",
         "lint": "eslint --ext .js,.vue --fix ./resources/js",
         "format": "prettier .  --write --ignore-path .gitignore",
-        "dev": "npm run development",
-        "development": "vite",
+        "dev": "vite",
         "fix:eslint": "eslint --ext .js,.vue resources/js/ --fix",
         "fix:prettier": "prettier --write --loglevel warn 'resources/js/**/*.vue'",
         "fix-code-style": "npm run fix:prettier && npm run fix:eslint"

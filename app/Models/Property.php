@@ -75,7 +75,7 @@ class Property extends Model
      */
     public function scopeOrderByTime($query)
     {
-        $query->orderBy('created_at')->orderBy('updated_at');
+        $query->orderBy('created_at', 'desc')->orderBy('updated_at', 'desc');
     }
 
     /**
@@ -142,5 +142,26 @@ class Property extends Model
     public function property_type()
     {
         return $this->hasOne(PropertyType::class, 'ex_property_type_id', 'property_type_id');
+    }
+
+    /***
+     * Get a lat long randomly
+     * Not a good place, might be google or other service be useful.
+     */
+    public static function getLatLong()
+    {
+        $lang = 33.7490;
+        $long = -84.3880;
+
+        $latitude = fake()->latitude(
+            ($lang * 10000 - rand(0, 50)) / 10000,
+            ($lang * 10000 + rand(0, 50)) / 10000
+        );
+
+        $longitude = fake()->longitude(
+            $min = ($long * 10000 - rand(0, 50)) / 10000,
+            $max = ($long * 10000 + rand(0, 50)) / 10000
+        );
+        return [$longitude, $latitude];
     }
 }

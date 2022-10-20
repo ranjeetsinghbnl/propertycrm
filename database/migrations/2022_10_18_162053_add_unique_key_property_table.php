@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('properties', function (Blueprint $table) {
-            $table->unique(['ex_property_id', 'property_updated_at']);
+            // $table->unique(['ex_property_id', 'property_updated_at']);
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('properties', function (Blueprint $table) {
-            $table->dropIndex(['ex_property_id', 'property_updated_at']);
+            // $table->dropIndex(['ex_property_id', 'property_updated_at']);
         });
     }
 };
