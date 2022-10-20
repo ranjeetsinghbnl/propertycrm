@@ -55,9 +55,9 @@ class CraigPropertyService
             return false;
         }
         Log::info("End syncing properties from third party");
-        return response()->json([
-            'ok' => true
-        ]);
+        // return response()->json([
+        //     'ok' => true
+        // ]);
     }
 
 
