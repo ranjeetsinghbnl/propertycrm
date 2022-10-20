@@ -1,7 +1,7 @@
 ## Property CRM
 
 A demo application to illustrate how [Inertia.js](https://inertiajs.com/) + [VueJs](https://vuejs.org/) + [Laravel](https://laravel.com) works together.
-![](https://raw.githubusercontent.com/ranjeetsinghbnl/propertycrm/main/screenshot.png)
+![](https://raw.githubusercontent.com/ranjeetsinghbnl/propertycrm/main/Screenshot.png)
 
 
 ## Prerequisite
